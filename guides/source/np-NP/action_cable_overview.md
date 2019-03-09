@@ -31,27 +31,27 @@ Active Recordबाट लेखीऐको वा तपाईले राे
 एउटा ईन्सटान्स हुन्छ। एउटा प्रयोगकर्ताको धेरैवटा WebSockets खुल्ला भऐको हुन सक्छ यदि धेरैवटा ब्राउजर ट्याब वा
 दिभाईसहरु चलाईको छभने। कल्याइनटको WebSocket कनेक्सनलाई कनजुमर भनिन्छ।
 
-Each consumer can in turn subscribe to multiple cable channels. Each channel
-encapsulates a logical unit of work, similar to what a controller does in
-a regular MVC setup. For example, you could have a `ChatChannel` and
-an `AppearancesChannel`, and a consumer could be subscribed to either
-or to both of these channels. At the very least, a consumer should be subscribed
-to one channel.
+प्रटेक कन्ज्युमरले धेरैवटा केबल च्यानल सब्सकराईब गर्न सक्छन। प्रटेक च्यानलले लोजिकल युनिटको कामलाई ईनक्पसुलेट
+गर्दछ जसरी कन्त्रोलरले नियमित MVC सेटअपमा गरे जस्तै।
+उधारणको लागि, तपाईसंग `ChatChannel` र `AppearancesChannel` हुन सक्छन र कन्ज्युमरले
+यो वा दुबै च्यानलसँग सब्सकराईब गर्न सक्छन।
+थाेरैमा एउटा कन्ज्युमरले कम्तिमा पनि एउटा च्यानल सब्सकराईब गर्नु पर्दछ।
 
+कन्ज्युमरलाई च्यानलसँग सब्सकराईब गरिन्दा, त्यो सब्सकराईबर हुन्छ।
 When the consumer is subscribed to a channel, they act as a subscriber.
-The connection between the subscriber and the channel is, surprise-surprise,
-called a subscription. A consumer can act as a subscriber to a given channel
-any number of times. For example, a consumer could subscribe to multiple chat rooms
-at the same time. (And remember that a physical user may have multiple consumers,
-one per tab/device open to your connection).
+सब्सकराईबर र च्यानलको कनेक्सनलाई सर्पाई-सर्पाई सदस्यता भनिन्छ। कन्ज्युमरले दिइएको च्यानलमा जति
+पटक पनि सब्सकराईबरको रुपमा अधिनियम गर्न सक्छन। उधारणको लागि, एउटा कन्ज्युमरले 
+एउटै समयमा धेरैवटा च्याट रुमहरुमा सब्सकराईब गर्न सक्छन।
+(याद गर्नुस कि एउटा फिजिकल युजरको धेरैवटा कनजुमर हुन सक्छन, प्रटेक ट्याब/दिभाईस तपाईको
+खुल्ला कनेक्सन अनुसार)
 
-Each channel can then again be streaming zero or more broadcastings.
-A broadcasting is a pubsub link where anything transmitted by the broadcaster is
-sent directly to the channel subscribers who are streaming that named broadcasting.
+प्रटेक च्यानल फेरि सुन्य वा धेरैवटा ब्रोदकास्तिङ स्ट्रिम गरिरहेको हुन सक्छन।
+ब्रोदकास्तिङ भनेको पबसब लिन्क हो, जहाँ ब्रोदकास्तर जे प्रसारण गरे पनि त्यो सिधा 
+च्यानल सब्सकराईबर को पठाईन्छ जो त्यो नामको ब्रोदकास्तिङ स्ट्रिम गरिरहेको हुन्छ।
 
-As you can see, this is a fairly deep architectural stack. There's a lot of new
-terminology to identify the new pieces, and on top of that, you're dealing
-with both client and server side reflections of each unit.
+तपाई देख्नसक्नु हुन्छ कि यो गहिरो वास्तुकला स्ट्याक हो। यहा धेरै शब्दावलीहरु छन नयाँ तुक्राहरु
+पहिचान गर्नको लागि। यो माथि, तपाई क्लाइन्ट र सर्भरको प्रटेक युनिट प्रतिबिम्बसँग सम्झौता
+गर्दे हुनुहुन्छ।
 
 What is Pub/Sub
 ---------------
