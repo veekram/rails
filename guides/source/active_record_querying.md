@@ -611,7 +611,8 @@ If you want to call `order` multiple times, subsequent orders will be appended t
 Client.order("orders_count ASC").order("created_at DESC")
 # SELECT * FROM clients ORDER BY orders_count ASC, created_at DESC
 ```
-WARNING: If you are using **MySQL 5.7.5** and above, then on selecting fields from a result set using methods like `select`, `pluck` and `ids`; the `order` method will raise an `ActiveRecord::StatementInvalid` exception unless the field(s) used in `order` clause are included in the select list. See the next section for selecting fields from the result set.
+
+WARNING: In most database systems, on selecting fields with `distinct` from a result set using methods like `select`, `pluck` and `ids`; the `order` method will raise an `ActiveRecord::StatementInvalid` exception unless the field(s) used in `order` clause are included in the select list. See the next section for selecting fields from the result set.
 
 Selecting Specific Fields
 -------------------------
@@ -818,19 +819,19 @@ Post.select(:title, :body).reselect(:created_at)
 The SQL that would be executed:
 
 ```sql
-SELECT `posts.created_at` FROM `posts`
+SELECT `posts`.`created_at` FROM `posts`
 ```
 
 In case the `reselect` clause is not used,
 
 ```ruby
-Post.select(:title, :body)
+Post.select(:title, :body).select(:created_at)
 ```
 
 the SQL executed would be:
 
 ```sql
-SELECT `posts.title`, `posts.body` FROM `posts`
+SELECT `posts`.`title`, `posts`.`body`, `posts`.`created_at` FROM `posts`
 ```
 
 ### `reorder`
