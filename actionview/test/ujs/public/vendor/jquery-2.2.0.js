@@ -5578,7 +5578,7 @@ var iframe,
 	};
 
 /**
- * Retrieve the actual display of an element
+ * Retrieve the actual display of a element
  * @param {String} name nodeName of the element
  * @param {Object} doc Document object
  */
