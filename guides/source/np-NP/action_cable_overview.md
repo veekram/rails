@@ -52,14 +52,12 @@ Active Recordबाट लेखीऐको वा तपाईले राे
 पहिचान गर्नको लागि। यो माथि, तपाई क्लाइन्ट र सर्भरको प्रटेक युनिट प्रतिबिम्बसँग सम्झौता
 गर्दे हुनुहुन्छ।
 
-What is Pub/Sub
+पब/सब के हो?
 ---------------
 
-[Pub/Sub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), or
-Publish-Subscribe, refers to a message queue paradigm whereby senders of
-information (publishers), send data to an abstract class of recipients
-(subscribers), without specifying individual recipients. Action Cable uses this
-approach to communicate between the server and many clients.
+[Pub/Sub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), वा
+पब्लिस-सब्सकराईब भन्नाले मेसेज क्यु पारादिम बुजिन्छ, जहाँ सेनदरको सुचना(पब्लिसरले) दाता एब्त्ताक क्लासको
+प्राप्तकर्ताहरू(सब्सकराईबर) बुजिन्छ। Action Cableले यो तारिका धेरै क्लाइन्ट र सर्भर संबाद गर्न प्रयोग गर्छन।
 
 ## Server-Side Components
 
